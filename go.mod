@@ -1,4 +1,4 @@
-module bitbucket.org/mikehouston/asana-go
+module github.com/andoma-go/asana-go
 
 go 1.19
 

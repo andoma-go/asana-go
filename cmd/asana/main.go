@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/jessevdk/go-flags"
 	"log"
 	"mime"
 	"net/http"
@@ -11,7 +10,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"bitbucket.org/mikehouston/asana-go"
+	"github.com/jessevdk/go-flags"
+
+	"github.com/andoma-go/asana-go"
 )
 
 var options struct {
