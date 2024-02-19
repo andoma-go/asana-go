@@ -95,10 +95,7 @@ type StorySubtypeFields struct {
 
 	// Present for dependency_added, dependency_removed, dependency_marked_complete, dependency_marked_incomplete,
 	// dependency_due_date_changed
-	Dependency *Task `json:"duplicated_from,omitempty"`
-
-	// Present for dependent_added, dependent_removed
-	Dependent *Task `json:"duplicated_from,omitempty"`
+	Dependency *Task `json:"dependency,omitempty"`
 }
 
 // Story represents an activity associated with an object in the Asana

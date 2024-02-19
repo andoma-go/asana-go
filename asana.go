@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"mime/multipart"
 	"net/http"
@@ -15,11 +14,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/rs/xid"
-
+	"dario.cat/mergo"
 	"github.com/google/go-querystring/query"
-	"github.com/imdario/mergo"
 	"github.com/pkg/errors"
+	"github.com/rs/xid"
 )
 
 const (
@@ -338,7 +336,7 @@ func (c *Client) parseResponse(resp *http.Response, result interface{}, requestI
 
 	// Get response body
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
