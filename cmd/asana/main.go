@@ -10,9 +10,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/jessevdk/go-flags"
-
 	"github.com/andoma-go/asana-go"
+	"github.com/jessevdk/go-flags"
 )
 
 var options struct {
@@ -55,8 +54,8 @@ func main() {
 		},
 	})
 	if options.Debug {
-		client.Debug = true
-		client.DefaultOptions.Pretty = true
+		pretty := true
+		client.DefaultOptions.Pretty = &pretty
 	}
 	client.Verbose = options.Verbose
 	client.DefaultOptions.Enable = []asana.Feature{asana.StringIDs, asana.NewSections, asana.NewTaskSubtypes}
