@@ -1,7 +1,5 @@
 package asana
 
-import "fmt"
-
 type Portfolio struct {
 	// Read-only. Globally unique ID of the object
 	ID string `json:"gid,omitempty"`
@@ -19,6 +17,6 @@ func (w *Workspace) Portfolios(client *Client, options ...*Options) ([]*Portfoli
 	}
 
 	// Make the request
-	nextPage, err := client.get(fmt.Sprintf("/portfolios"), nil, &result, append(options, o)...)
+	nextPage, err := client.get("/portfolios", nil, &result, append(options, o)...)
 	return result, nextPage, err
 }
